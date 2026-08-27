@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskly | My Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">taskly<span>.</span></div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-view="all">
+                <span class="nav-icon">⌂</span>
+                My Tasks
+            </button>
+
+            <button class="nav-item" data-view="today">
+                <span class="nav-icon">□</span>
+                Today
+                <span class="nav-count" id="todayCount">0</span>
+            </button>
+
+            <button class="nav-item" data-view="upcoming">
+                <span class="nav-icon">◷</span>
+                Upcoming
+                <span class="nav-count" id="upcomingCount">0</span>
+            </button>
+
+            <button class="nav-item" data-view="completed">
+                <span class="nav-icon">✓</span>
+                Completed
+                <span class="nav-count" id="completedCount">0</span>
+            </button>
+
+            <button class="nav-item" data-view="trash">
+                <span class="nav-icon">◇</span>
+                Trash
+                <span class="nav-count" id="trashCount">0</span>
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <h1 id="pageTitle">Good evening, Trisha.</h1>
+                <p id="pageSubtitle">Let's make today productive.</p>
+            </div>
+
+            <button class="theme-button">◐</button>
+        </header>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon pink">✓</div>
+                <div>
+                    <strong id="totalTasks">0</strong>
+                    <span>Total Tasks</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <strong id="completedTasks">0</strong>
+                    <span>Completed</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">◷</div>
+                <div>
+                    <strong id="pendingTasks">0</strong>
+                    <span>Pending</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">↗</div>
+                <div>
+                    <strong id="progressPercent">0%</strong>
+                    <span>Progress</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task -->
+        <section class="add-task-container" id="addTaskContainer">
+
+            <div class="task-input-row">
+
+                <span class="add-icon">+</span>
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What needs to be done?"
+                >
+
+                <button id="addTaskButton">Add Task</button>
+
+            </div>
+
+            <div class="task-options">
+
+                <label class="option-group">
+                    <span class="option-label">Category</span>
+
+                    <select id="categoryInput">
+                        <option value="Academic">Academic</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+
+
+                <label class="option-group">
+                    <span class="option-label">Due date</span>
+
+                    <div class="date-picker">
+                        <span class="calendar-icon">▣</span>
+                        <input type="date" id="dateInput">
+                    </div>
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task Header -->
+        <div class="task-header">
+
+            <h2 id="taskSectionTitle">Your Tasks</h2>
+
+            <div class="task-filters" id="taskFilters">
+
+                <button class="filter active-filter" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter" data-filter="active">
+                    Active
+                </button>
+
+                <button class="filter" data-filter="completed">
+                    Completed
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Tasks -->
+        <section id="taskList" class="task-list"></section>
+
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+
+            <div class="empty-icon">✦</div>
+
+            <h3>You're all caught up!</h3>
+
+            <p>Add a new task and keep your momentum going.</p>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
